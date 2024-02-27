@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://7rebqg6eiivk"]
+
+[ext_resource type="Texture2D" uid="uid://5xf5qv5vnr8o" path="res://player/player.png" id="2_81gx7"]
+[ext_resource type="Script" path="res://player/player.gd" id="2_ljyyf"]
+[ext_resource type="Texture2D" uid="uid://btkh84wsfnu1l" path="res://player/SERD.png" id="3_bj8im"]
+[ext_resource type="AudioStream" uid="uid://sfhndxkgk1er" path="res://fonts/ColorTiles-_DEBUG_-2024-01-13-21-00-48_2.mp3" id="4_nelds"]
+
+[node name="Player" type="Node2D"]
+position = Vector2(576, 468)
+script = ExtResource("2_ljyyf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(0.201, 0.201)
+texture = ExtResource("2_81gx7")
+
+[node name="Serd" type="Sprite2D" parent="."]
+position = Vector2(-1.00136e-05, 4)
+scale = Vector2(0.140625, 0.140625)
+texture = ExtResource("3_bj8im")
+
+[node name="Window" type="Window" parent="Serd"]
+visible = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Serd/Window"]
+stream = ExtResource("4_nelds")
+volume_db = -14.16
+autoplay = true
