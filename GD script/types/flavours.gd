@@ -1,1 +1,0 @@
-enum FLAVOURS { ORANGE, LEMON }
